@@ -6,6 +6,13 @@ gem 'rails', '3.0.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'mysql2'
+gem "compass", ">= 0.10.6"
+gem 'haml'
+gem 'devise'
+gem 'jquery-rails', '>= 0.2.6'
+gem 'andand'
+gem 'formtastic', '~> 1.2.3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -29,3 +36,10 @@ gem 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development do
+  gem 'hirb'
+  gem 'capistrano'
+  gem 'capistrano-ext'
+end
+
