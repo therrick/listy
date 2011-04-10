@@ -1,4 +1,10 @@
 Listy::Application.routes.draw do
+  resources :locations
+
+  resources :items
+
+  resources :stores
+
   devise_for :users
 
   # The priority is based upon order of creation:
