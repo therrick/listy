@@ -1,6 +1,12 @@
 <div id="header">
   <ul class="umenu">
-    <%= render 'devise/menu/registration_items' %>
-    <%= render 'devise/menu/login_items' %>
+    <% if user_signed_in? %>
+      <li class="first"><%= link_to('my stores', stores_path) %></li>
+      <li><%= link_to('profile', edit_user_registration_path) %></li>
+      <li><%= link_to('sign out', destroy_user_session_path) %></li>
+    <% else %>
+      <li class="first"><%= link_to('register', new_user_registration_path)  %></li>
+      <li><%= link_to('sign in', new_user_session_path)  %></li>
+    <% end %>
   </ul>
 </div>
