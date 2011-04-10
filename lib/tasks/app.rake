@@ -27,7 +27,7 @@ namespace :app do
       end
     end
     
-    user1 = User.find_by_email('tom_herrick@hotmail.com')
+    user1 = User.find_by_email('admin@test.com')
 
     [
       {:name => "giant", :user_id => user1.id},
