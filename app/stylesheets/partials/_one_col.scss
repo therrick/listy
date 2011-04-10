@@ -1,0 +1,46 @@
+//    +--------------+
+//    |   #header    |
+//    +--------+-----+
+//    |              |
+//    |   #content   |
+//    |              |
+//    +--------------+
+//    |   #footer    |
+//    +--------+-----+
+
+body.one-col {
+  background-color: #ccc;
+  #container, #header, #content-wrapper, #footer, #footer-text, #sub-footer {
+    @include container; 
+  }
+  #header {
+    background-color: #eee;
+    height: 20px;
+    border-bottom: solid 1px #999;
+    #header-right {
+      @include column(16, true);
+      height: 100%;
+      text-align: right; 
+    }
+    #header-user {
+      line-height: 18px;
+      min-height: 18px;
+      padding-top: 2px;
+      margin-right: 8px;
+      color: #777; 
+      img { margin: 0; } 
+    }
+  }
+  #content-wrapper {
+/*    @include showgrid;*/
+    background-color: #fff; 
+    #actual-content {
+      @include prepend(1);           
+      @include column(31, true);
+      @include append-bottom(20px);
+      min-height: 400px; 
+    } 
+  }
+  #footer {
+  }
+}

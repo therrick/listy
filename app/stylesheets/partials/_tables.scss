@@ -1,0 +1,16 @@
+#actual-content {
+  table { 
+    border: 1px solid #777; 
+    border-collapse: collapse; 
+  }  
+  tr.header th { background-color: #ddd; }
+  tr.even td { background-color: #E7FFE7; }
+  th .current {
+    padding-right: 12px;
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+  th .asc { background-image: url(/images/up_arrow.gif); }
+  th .desc { background-image: url(/images/down_arrow.gif); }
+  th { border-bottom: 1px solid #777; }
+} 

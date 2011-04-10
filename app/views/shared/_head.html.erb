@@ -1,0 +1,12 @@
+<title><%= @page_title or 'listy' %></title>
+<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+<!--[if lt IE 8]>
+  <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<![endif]-->
+<%= stylesheet_link_tag 'formtastic', 'formtastic_changes' %>
+<!--[if lte IE 8]>
+  <script language="javascript" type="text/javascript" src="/javascripts/excanvas.min.js"></script>
+<![endif]-->
+<%= javascript_include_tag :defaults %>
+<%= csrf_meta_tag %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  store_id: 1
+  number_needed: 1
+  location_id: 1
+  notes: MyString
+  popularity: 1
+
+two:
+  name: MyString
+  store_id: 1
+  number_needed: 1
+  location_id: 1
+  notes: MyString
+  popularity: 1
