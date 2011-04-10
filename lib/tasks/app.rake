@@ -15,7 +15,7 @@ namespace :app do
 
     # find_or_create won't work with the user model and 'password'
     [
-      {:email => 'tom_herrick@hotmail.com', :password => 'password1', :is_admin => true}
+      {:email => 'admin@test.com', :password => 'password1', :is_admin => true}
     ].each do |attributes|
       if !User.find_by_email(attributes[:email])
         u = User.new
