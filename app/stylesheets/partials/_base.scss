@@ -5,6 +5,9 @@ $blueprint-grid-columns: 33;
 $blueprint-container-size: 654px;
 $blueprint-grid-margin: 6px;
 // column width = 14
+$prepend-columns: 1;
+$content-columns: $blueprint-grid-columns - ($prepend-columns * 2);
+
 
 // Use this to calculate the width based on the total width.
 // Or you can set $blueprint-grid-width to a fixed value and unset $blueprint-container-size -- it will be calculated for you.

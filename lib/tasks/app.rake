@@ -15,14 +15,14 @@ namespace :app do
 
     # find_or_create won't work with the user model and 'password'
     [
-      {:email => 'admin@test.com', :password => 'password1', :is_admin => true}
+      {:email => 'admin@test.com', :password => 'password1', :admin => true}
     ].each do |attributes|
       if !User.find_by_email(attributes[:email])
         u = User.new
 #        u.username = attributes[:username]
         u.email    = attributes[:email]
         u.password = attributes[:password]
-        u.is_admin = attributes[:is_admin]
+        u.admin = attributes[:admin]
         u.save!
       end
     end

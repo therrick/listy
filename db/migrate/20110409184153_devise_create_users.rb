@@ -10,11 +10,13 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
       # t.token_authenticatable
 
-      t.boolean :is_admin, :default => false
+      t.string :username
+      t.boolean :admin, :default => false
 
       t.timestamps
     end
 
+    add_index :users, :username,             :unique => true
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true

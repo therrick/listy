@@ -394,7 +394,7 @@ body.one-col {
   background-color: #ccc;
 }
 /* line 13, ../../app/stylesheets/partials/_one_col.scss */
-body.one-col #container, body.one-col #header, body.one-col #content-wrapper, body.one-col #footer, body.one-col #footer-text, body.one-col #sub-footer {
+body.one-col #container, body.one-col #header, body.one-col #content-wrapper, body.one-col #footer {
   width: 654px;
   margin: 0 auto;
   overflow: hidden;
@@ -402,34 +402,32 @@ body.one-col #container, body.one-col #header, body.one-col #content-wrapper, bo
 }
 /* line 16, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 654px;
   background-color: #eee;
   height: 20px;
   border-bottom: solid 1px #999;
 }
-/* line 20, ../../app/stylesheets/partials/_one_col.scss */
-body.one-col #header #header-right {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 314px;
-  height: 100%;
-  text-align: right;
-}
 /* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html body.one-col #header #header-right {
+* html body.one-col #header {
   overflow-x: hidden;
 }
-/* line 25, ../../app/stylesheets/partials/_one_col.scss */
-body.one-col #header #header-user {
-  line-height: 18px;
-  min-height: 18px;
-  padding-top: 2px;
-  margin-right: 8px;
-  color: #777;
+/* line 21, ../../app/stylesheets/partials/_one_col.scss */
+body.one-col #header ul.umenu {
+  margin: 0 0 2em;
+  padding: 0;
 }
-/* line 31, ../../app/stylesheets/partials/_one_col.scss */
-body.one-col #header #header-user img {
-  margin: 0;
+/* line 24, ../../app/stylesheets/partials/_one_col.scss */
+body.one-col #header ul.umenu li {
+  list-style-type: disc;
+  float: left;
+  margin: 0 1em 0 1em;
+}
+/* line 29, ../../app/stylesheets/partials/_one_col.scss */
+body.one-col #header ul.umenu li.first {
+  list-style-type: none;
 }
 /* line 34, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #content-wrapper {
