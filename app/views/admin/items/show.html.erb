@@ -1,35 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>name:</b>
   <%= @item.name %>
 </p>
 
 <p>
-  <b>Store:</b>
+  <b>store:</b>
   <%= @item.store_id %>
 </p>
 
 <p>
-  <b>Number needed:</b>
+  <b>number needed:</b>
   <%= @item.number_needed %>
 </p>
 
 <p>
-  <b>Location:</b>
+  <b>location:</b>
   <%= @item.location_id %>
 </p>
 
 <p>
-  <b>Notes:</b>
+  <b>notes:</b>
   <%= @item.notes %>
 </p>
 
 <p>
-  <b>Popularity:</b>
+  <b>popularity:</b>
   <%= @item.popularity %>
 </p>
 
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'edit', edit_admin_item_path(@item) %> |
+<%= link_to 'back', admin_items_path %>

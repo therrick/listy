@@ -1,86 +1,51 @@
 class StoresController < ApplicationController
-
+  
   before_filter :authenticate_user!
-
-  # GET /stores
-  # GET /stores.xml
+  
   def index
-    @stores = Store.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @stores }
-    end
+    @stores = Store.find_all_by_user_id(current_user.id)
   end
-
-  # GET /stores/1
-  # GET /stores/1.xml
+  
   def show
-    @store = Store.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @store }
-    end
+    @store = current_user.stores.find(params[:id])
+    @list_items = Item.where("store_id = ? AND number_needed > 0", @store.id)
+    @other_items = Item.where("store_id = ? AND number_needed = 0", @store.id)
+  
   end
-
-  # GET /stores/new
-  # GET /stores/new.xml
+  
   def new
     @store = Store.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @store }
-    end
   end
-
-  # GET /stores/1/edit
+  
   def edit
-    @store = Store.find(params[:id])
+    @store = current_user.stores.find(params[:id])
   end
-
-  # POST /stores
-  # POST /stores.xml
+  
   def create
     @store = Store.new(params[:store])
-
-    respond_to do |format|
-      if @store.save
-        format.html { redirect_to(@store, :notice => 'Store was successfully created.') }
-        format.xml  { render :xml => @store, :status => :created, :location => @store }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @store.errors, :status => :unprocessable_entity }
-      end
+    @store.user_id = current_user.id
+  
+    if @store.save
+      redirect_to(stores_url, :notice => 'store was successfully created.')
+    else
+      render :action => "new"
     end
   end
-
-  # PUT /stores/1
-  # PUT /stores/1.xml
+  
   def update
-    @store = Store.find(params[:id])
-
-    respond_to do |format|
-      if @store.update_attributes(params[:store])
-        format.html { redirect_to(@store, :notice => 'Store was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @store.errors, :status => :unprocessable_entity }
-      end
+    @store = current_user.stores.find(params[:id])
+  
+    if @store.update_attributes(params[:store])
+      redirect_to(stores_url, :notice => 'store was successfully updated.')
+    else
+      render :action => "edit"
     end
   end
-
-  # DELETE /stores/1
-  # DELETE /stores/1.xml
+  
   def destroy
-    @store = Store.find(params[:id])
+    @store = current_user.stores.find(params[:id])
     @store.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(stores_url) }
-      format.xml  { head :ok }
-    end
+  
+    redirect_to(stores_url)
   end
 end

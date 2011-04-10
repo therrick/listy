@@ -1,25 +1,15 @@
-<h1>Listing stores</h1>
+<h1>my stores</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @stores.each do |store| %>
   <tr>
-    <td><%= store.name %></td>
-    <td><%= store.user_id %></td>
-    <td><%= link_to 'Show', store %></td>
-    <td><%= link_to 'Edit', edit_store_path(store) %></td>
-    <td><%= link_to 'Destroy', store, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to store.name, store %></td>
+    <td><%= link_to 'edit', edit_store_path(store.id) %></td>
+    <td><%= link_to 'destroy', store, :confirm => 'are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Store', new_store_path %>
+<%= link_to 'new store', new_store_path %>
