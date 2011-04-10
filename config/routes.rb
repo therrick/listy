@@ -1,11 +1,13 @@
 Listy::Application.routes.draw do
-  resources :locations
-
-  resources :items
-
-  resources :stores
 
   devise_for :users
+
+  resources :users
+  resources :locations
+  resources :items
+  resources :stores
+
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,7 +59,6 @@ Listy::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 
