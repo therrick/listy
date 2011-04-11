@@ -1,87 +1,108 @@
-class Admin::ItemsController < ApplicationController
+class ItemsController < ApplicationController
 
   before_filter :authenticate_user!
-  before_filter :verify_admin!
 
-  # GET /items
-  # GET /items.xml
-  def index
-    @items = Item.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @items }
-    end
-  end
-
-  # GET /items/1
-  # GET /items/1.xml
-  def show
-    @item = Item.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @item }
-    end
-  end
-
-  # GET /items/new
-  # GET /items/new.xml
   def new
     @item = Item.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @item }
-    end
   end
 
-  # GET /items/1/edit
   def edit
-    @item = Item.find(params[:id])
+    @store = current_user.stores.find(params[:store_id])
+    @item = @store.items.find(params[:id])
   end
 
-  # POST /items
-  # POST /items.xml
   def create
+    @store = current_user.stores.find(params[:store_id])
     @item = Item.new(params[:item])
+    @item.store_id = @store.id
+    @item.number_needed = 1
+    
+    if !params[:item][:name] || params[:item][:name].blank?
+      redirect_to(store_path(@store.id))
+      return
+    end
+    
+    existing_item = @store.items.find_by_name(params[:item][:name])
+    if existing_item 
+      existing_item.number_needed += 1
+      existing_item.save
+      redirect_to(store_path(@store.id), :notice => "#{existing_item.name} number needed was incremented.")
+      return
+    end
 
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to(@item, :notice => 'Item was successfully created.') }
-        format.xml  { render :xml => @item, :status => :created, :location => @item }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
-      end
+    if @item.save
+      redirect_to(store_path(@store.id), :notice => 'item was successfully created.')
+    else
+      render :action => "new"
     end
   end
 
-  # PUT /items/1
-  # PUT /items/1.xml
   def update
-    @item = Item.find(params[:id])
+    @store = current_user.stores.find(params[:store_id])
+    @item = @store.items.find(params[:id])
 
-    respond_to do |format|
-      if @item.update_attributes(params[:item])
-        format.html { redirect_to(@item, :notice => 'Item was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
-      end
+    if @item.update_attributes(params[:item])
+      redirect_to(store_path(@store.id), :notice => 'item was successfully updated.')
+    else
+      render :action => "edit"
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.xml
   def destroy
-    @item = Item.find(params[:id])
+    @store = current_user.stores.find(params[:store_id])
+    @item = @store.items.find(params[:id])
+
     @item.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(items_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(store_path(@store.id), :notice => 'item was successfully deleted.')
+  end
+
+  def mark_purchased
+    @store = current_user.stores.find(params[:store_id])
+    @item = @store.items.find(params[:id])
+    
+    original_number_needed = @item.number_needed
+    @item.popularity += @item.number_needed
+    @item.number_needed = 0
+    @item.save!
+    
+    flash[:notice] = "#{@item.name} was marked purchased. <a href=\"#{url_for(:action => 'undo_purchase', :number_needed => original_number_needed)}\">undo</a>".html_safe
+      
+    redirect_to store_path(@store.id)
+  end
+
+  def undo_purchase
+    @store = current_user.stores.find(params[:store_id])
+    @item = @store.items.find(params[:id])
+    
+    @item.popularity -= params[:number_needed].to_i
+    @item.number_needed = params[:number_needed].to_i
+    @item.save!
+
+    redirect_to store_path(@store.id)
+  end
+
+  def add_needed
+    @store = current_user.stores.find(params[:store_id])
+    @item = @store.items.find(params[:id])
+
+    @item.number_needed += 1
+    @item.save!
+    
+   flash[:notice] = "#{@item.name} number needed was incremented."
+
+   redirect_to store_path(@store.id)
+  end
+
+  def subtract_needed
+     @store = current_user.stores.find(params[:store_id])
+     @item = @store.items.find(params[:id])
+
+     @item.number_needed -= 1 if @item.number_needed > 0
+     @item.save!
+
+    flash[:notice] = "#{@item.name} number needed was decremented."
+
+    redirect_to store_path(@store.id)
   end
 end

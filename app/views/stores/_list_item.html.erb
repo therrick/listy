@@ -1,0 +1,16 @@
+<tr class="item_list needed">
+  <td class="action">
+    <%= link_to image_tag("purchase.png", :border=>0), mark_purchased_store_item_path(@store.id, list_item.id) %>
+  </td>
+  <td class="name">
+    <%= list_item.name %>
+    <%= list_item.number_needed > 1 ? "(x#{list_item.number_needed})" : ""%>
+  </td>
+  <td class="location"><%= list_item.location.andand.name %></td>
+  <td class="notes"><%= list_item.notes_trimmed %></td>
+  <td class="more_actions">
+    <%= link_to image_tag("add.png", :border=>0), add_needed_store_item_path(@store.id, list_item.id) %>
+    <%= link_to image_tag("subtract.png", :border=>0), subtract_needed_store_item_path(@store.id, list_item.id) %>
+    <%= link_to image_tag("edit.png", :border=>0), edit_store_item_path(@store.id, list_item.id) %>
+  </td>
+</tr>

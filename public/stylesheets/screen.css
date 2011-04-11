@@ -497,32 +497,81 @@ body.bp #header-user a:active {
 
 /* line 2, ../../app/stylesheets/partials/_tables.scss */
 #actual-content table {
-  border: 1px solid #777;
   border-collapse: collapse;
 }
-/* line 6, ../../app/stylesheets/partials/_tables.scss */
+/* line 5, ../../app/stylesheets/partials/_tables.scss */
 #actual-content tr.header th {
   background-color: #ddd;
 }
-/* line 7, ../../app/stylesheets/partials/_tables.scss */
+/* line 6, ../../app/stylesheets/partials/_tables.scss */
 #actual-content tr.even td {
   background-color: #E7FFE7;
 }
+/* line 7, ../../app/stylesheets/partials/_tables.scss */
+#actual-content tr.needed td {
+  background-color: #fff;
+}
 /* line 8, ../../app/stylesheets/partials/_tables.scss */
+#actual-content tr.not_needed td {
+  background-color: #eee;
+}
+/* line 9, ../../app/stylesheets/partials/_tables.scss */
 #actual-content th .current {
   padding-right: 12px;
   background-repeat: no-repeat;
   background-position: right center;
 }
-/* line 13, ../../app/stylesheets/partials/_tables.scss */
+/* line 14, ../../app/stylesheets/partials/_tables.scss */
 #actual-content th .asc {
   background-image: url(/images/up_arrow.gif);
 }
-/* line 14, ../../app/stylesheets/partials/_tables.scss */
+/* line 15, ../../app/stylesheets/partials/_tables.scss */
 #actual-content th .desc {
   background-image: url(/images/down_arrow.gif);
 }
-/* line 15, ../../app/stylesheets/partials/_tables.scss */
+/* line 16, ../../app/stylesheets/partials/_tables.scss */
 #actual-content th {
   border-bottom: 1px solid #777;
+}
+
+/* line 2, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list form.formtastic fieldset > ol > li {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+/* line 8, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list form.formtastic#new_item fieldset > ol > li label {
+  display: none;
+}
+/* line 11, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list form.formtastic#new_item fieldset > ol > li {
+  display: inline;
+}
+/* line 14, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list form.formtastic#new_item fieldset.inputs {
+  width: 240px;
+  display: inline;
+  overflow: visible;
+  padding-bottom: 5px;
+}
+/* line 20, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list form.formtastic#new_item fieldset.buttons {
+  padding: 0;
+}
+/* line 25, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list tr td.action {
+  width: 20px;
+}
+/* line 28, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list tr td.name {
+  width: 80px;
+}
+/* line 31, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list tr td.location {
+  width: 10px;
+}
+/* line 34, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list tr td.location {
+  width: 80px;
 }

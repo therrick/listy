@@ -1,0 +1,7 @@
+<% semantic_form_for [@store, @item] do |f| %>
+  <%= f.inputs %>
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+    <li><%= link_to "cancel", store_path(@store.id) %></li>
+  <% end %>
+<% end %>

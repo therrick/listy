@@ -10,8 +10,15 @@ Listy::Application.routes.draw do
   end
 
   resources :locations
-  resources :items
-  resources :stores
+  resources :stores do
+    resources :items do
+      get 'mark_purchased', :on => :member
+      get 'undo_purchase', :on => :member
+      get 'add_needed', :on => :member
+      get 'subtract_needed', :on => :member
+    end
+  end
+  
 
   root :to => "stores#index"
 

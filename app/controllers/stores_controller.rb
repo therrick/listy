@@ -8,8 +8,14 @@ class StoresController < ApplicationController
   
   def show
     @store = current_user.stores.find(params[:id])
-    @list_items = Item.where("store_id = ? AND number_needed > 0", @store.id)
-    @other_items = Item.where("store_id = ? AND number_needed = 0", @store.id)
+    @item = Item.new() # for 'new' form at top of page
+    
+    @list_items = Item.joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
+      .where("items.store_id = ? AND items.number_needed > 0", @store.id)
+      .order("locations.sort, items.name")
+    @other_items = Item.joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
+      .where("items.store_id = ? AND items.number_needed = 0", @store.id)
+      .order("locations.sort, items.name")
   
   end
   

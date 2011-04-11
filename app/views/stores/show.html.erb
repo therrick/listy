@@ -1,15 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%= content_for(:head) do %>
+  <%= javascript_include_tag 'list_go' %>
+<% end %>
 
-<p>
-  <b>name:</b>
-  <%= @store.name %>
-</p>
+<h1>my shopping list for <%= @store.name %></h1>
 
-<p>
-  <b>user:</b>
-  <%= @store.user_id %>
-</p>
+<div id="items_list">
+  <% semantic_form_for [@store, @item] do |f| %>
+    <%= f.inputs do %>
+      <%= f.input :name %>
+      <%= f.input :location %>
+    <% end %>
+    <%= f.buttons do %>
+      <%= f.commit_button %>
+    <% end %>
+  <% end %>
 
+  <table>
+    <tr>
+      <th></th>
+      <th>item</th>
+      <th>loc.</th>
+      <th>notes</th>
+      <th></th>
+    </tr>
+    <%= render :partial => "list_item", :collection => @list_items %>
+    <%= render :partial => "other_item", :collection => @other_items %>
+  </table>
 
-<%= link_to 'edit', edit_store_path(@store) %> |
-<%= link_to 'back', stores_path %>
+</div>

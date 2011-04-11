@@ -37,17 +37,21 @@ namespace :app do
 
     store1 = Store.find_by_name_and_user_id("giant", user1.id)
     [
-      {:name => "1A", :store_id => store1.id},
-      {:name => "1B", :store_id => store1.id},
-      {:name => "2", :store_id => store1.id},
-      {:name => "3", :store_id => store1.id},
+      {:name => "1A", :store_id => store1.id, :sort => 1 },
+      {:name => "1B", :store_id => store1.id, :sort => 2 },
+      {:name => "2", :store_id => store1.id, :sort => 3 },
+      {:name => "3", :store_id => store1.id, :sort => 4 },
     ].each do |attributes|
       Location.find_or_create_by_name_and_store_id(attributes)
     end
 
+    loc1 = Location.find_by_name_and_store_id("1A", store1.id)
+    loc2 = Location.find_by_name_and_store_id("1B", store1.id)
     [
-      {:name => "milk", :store_id => store1.id},
-      {:name => "eggs", :store_id => store1.id},
+      {:name => "milk", :store_id => store1.id, :location_id => loc1.id },
+      {:name => "eggs", :store_id => store1.id, :number_needed => 1, :location_id => loc1.id },
+      {:name => "bread", :store_id => store1.id, :number_needed => 2, :location_id => loc2.id },
+      {:name => "cereal", :store_id => store1.id },
     ].each do |attributes|
       Item.find_or_create_by_name_and_store_id(attributes)
     end
