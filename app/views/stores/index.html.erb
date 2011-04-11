@@ -5,7 +5,8 @@
   <tr>
     <td><%= link_to store.name, store %></td>
     <td><%= link_to 'edit', edit_store_path(store.id) %></td>
-    <td><%= link_to 'destroy', store, :confirm => 'are you sure?', :method => :delete %></td>
+    <td><%= link_to 'aisles', store_locations_path(store.id) %></td>
+    <td><%= link_to 'delete', store, :confirm => 'this will delete the store with all its items and history.  are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

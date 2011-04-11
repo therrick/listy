@@ -392,49 +392,50 @@ body.bp .removed {
 /* line 11, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col {
   background-color: #ccc;
+  font-size: 1em;
 }
-/* line 13, ../../app/stylesheets/partials/_one_col.scss */
+/* line 14, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #container, body.one-col #header, body.one-col #content-wrapper, body.one-col #footer {
   width: 654px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 16, ../../app/stylesheets/partials/_one_col.scss */
+/* line 17, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header {
   display: inline;
   float: left;
   margin-right: 0;
   width: 654px;
   background-color: #eee;
-  height: 20px;
+  height: 25px;
   border-bottom: solid 1px #999;
 }
 /* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.one-col #header {
   overflow-x: hidden;
 }
-/* line 21, ../../app/stylesheets/partials/_one_col.scss */
+/* line 22, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header ul.umenu {
   margin: 0 0 2em;
   padding: 0;
 }
-/* line 24, ../../app/stylesheets/partials/_one_col.scss */
+/* line 25, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header ul.umenu li {
   list-style-type: disc;
   float: left;
   margin: 0 1em 0 1em;
 }
-/* line 29, ../../app/stylesheets/partials/_one_col.scss */
+/* line 30, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header ul.umenu li.first {
   list-style-type: none;
 }
-/* line 34, ../../app/stylesheets/partials/_one_col.scss */
+/* line 35, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #content-wrapper {
   /*    @include showgrid;*/
   background-color: #fff;
 }
-/* line 37, ../../app/stylesheets/partials/_one_col.scss */
+/* line 38, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #content-wrapper #actual-content {
   padding-left: 20px;
   display: inline;
@@ -565,13 +566,17 @@ div#items_list tr td.action {
 }
 /* line 28, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.name {
-  width: 80px;
+  width: 140px;
 }
 /* line 31, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.location {
-  width: 10px;
+  width: 40px;
 }
 /* line 34, ../../app/stylesheets/partials/_item_list.scss */
-div#items_list tr td.location {
-  width: 80px;
+div#items_list tr td.notes {
+  width: 140px;
+}
+/* line 37, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list tr td.more_actions {
+  width: 40px;
 }

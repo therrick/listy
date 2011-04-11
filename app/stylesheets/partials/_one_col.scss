@@ -10,13 +10,14 @@
 
 body.one-col {
   background-color: #ccc;
+  font-size: 1em;
   #container, #header, #content-wrapper, #footer {
     @include container; 
   }
   #header {
     @include column($blueprint-grid-columns, true);
     background-color: #eee;
-    height: 20px;
+    height: 25px;
     border-bottom: solid 1px #999;
     ul.umenu {
       margin: 0 0 2em;
