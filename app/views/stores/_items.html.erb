@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <th></th>
+    <th>item</th>
+    <th>loc.</th>
+    <th>notes</th>
+    <th></th>
+  </tr>
+  <%= render :partial => "list_item", :collection => @list_items %>
+  <%= render :partial => "other_item", :collection => @other_items %>
+</table>

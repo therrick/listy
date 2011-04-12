@@ -2,29 +2,11 @@
   <%= javascript_include_tag 'list_go' %>
 <% end %>
 
-<h1>my shopping list for <%= @store.name %></h1>
+<h1><%= @store.name %></h1>
 
 <div id="items_list">
-  <% semantic_form_for [@store, @item] do |f| %>
-    <%= f.inputs do %>
-      <%= f.input :name %>
-      <%= f.input :location %>
-    <% end %>
-    <%= f.buttons do %>
-      <%= f.commit_button %>
-    <% end %>
-  <% end %>
+  <%= render "add_form" %>
 
-  <table>
-    <tr>
-      <th></th>
-      <th>item</th>
-      <th>loc.</th>
-      <th>notes</th>
-      <th></th>
-    </tr>
-    <%= render :partial => "list_item", :collection => @list_items %>
-    <%= render :partial => "other_item", :collection => @other_items %>
-  </table>
+  <div id="items"><%= render "items" %></div>
 
 </div>
