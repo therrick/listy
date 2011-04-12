@@ -580,3 +580,7 @@ div#items_list tr td.notes {
 div#items_list tr td.more_actions {
   width: 40px;
 }
+/* line 41, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list .sort_link {
+  font-size: .7em;
+}

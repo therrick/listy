@@ -14,12 +14,18 @@ class StoresController < ApplicationController
       .joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
       .where("items.store_id = ? AND items.number_needed > 0", @store.id)
       .order("locations.sort, items.name")
-    @other_items = Item
-      .search(params[:search])
+
+    @other_items = Item.scoped
+      
+    @other_items = @other_items.search(params[:search])
       .joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
       .where("items.store_id = ? AND items.number_needed = 0", @store.id)
-      .order("locations.sort, items.name")
-  
+      
+    if params[:sort] == "pop"
+      @other_items = @other_items.order("items.popularity DESC")
+    else
+      @other_items = @other_items.order("items.name")
+    end
   end
   
   def new

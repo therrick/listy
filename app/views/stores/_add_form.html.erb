@@ -1,12 +1,14 @@
 <!-- this invisible form allows the add-item form to double as an ajax search form -->
 <%= form_tag store_path(@store), :method => 'get', :id => "items_search" do %>  
     <%= hidden_field_tag :search, params[:search] %>  
+    <%= hidden_field_tag :sort, params[:sort] %>  
 <% end %>
 
 <% semantic_form_for [@store, @item] do |f| %>
   <%= f.inputs do %>
     <%= f.input :name, :input_html => { :autocomplete => "off" } %>
     <%= f.input :location %>
+    <%= hidden_field_tag :sort, params[:sort] %>  
   <% end %>
   <%= f.buttons do %>
     <%= f.commit_button :label => 'add' %>
