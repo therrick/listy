@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  sort: 1
+  position: 1
   store_id: 1
 
 two:
   name: MyString
-  sort: 1
+  position: 1
   store_id: 1

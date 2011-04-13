@@ -1,26 +1,47 @@
 <h1>listing locations</h1>
 
-<table>
-  <tr>
-    <th>name</th>
-    <th>sort</th>
-    <th>store</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @locations.each do |location| %>
-  <tr>
-    <td><%= location.name %></td>
-    <td><%= location.sort %></td>
-    <td><%= location.store.name %></td>
-    <td><%= link_to 'edit', edit_store_location_path(@store.id, location) %></td>
-    <td><%= link_to 'delete', store_location_path(@store.id, location), :confirm => 'are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<ul id="locations-list">
+  <% @locations.each do |location| %>
+    <li id="location_<%= location.id -%>">
+      <span class="name">
+        <%= location.name -%>
+      </span>
+      <span class="handle">[handle]<span>
+      <span class="edit"><%= link_to 'edit', edit_store_location_path(@store.id, location) %></span>
+      <span class="delete"><%= link_to 'delete', store_location_path(@store.id, location), :confirm => 'are you sure?', :method => :delete %></span>
+    </li>
+  <% end %>
+</ul>
 
 <br />
 
 <%= link_to 'new location', new_store_location_path(@store_id) %>
+
+
+
+<%= content_for :javascript do %>
+
+  <%= javascript_tag do %>
+     $('#locations-list').sortable(
+        {
+          axis: 'y', 
+          dropOnEmpty:false, 
+          handle: '.handle', 
+          cursor: 'crosshair',
+          items: 'li',
+          opacity: 0.4,
+          scroll: true,
+          update: function(){
+            $.ajax({
+                type: 'post', 
+                data: $('#locations-list').sortable('serialize'), 
+                dataType: 'script', 
+                complete: function(request){
+                    $('#locations-list').effect('highlight');
+                  },
+                url: '/stores/<%=@store.id%>/locations/sort'})
+            }
+          })
+    <% end %>
+  
+<% end %>

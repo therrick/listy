@@ -584,3 +584,30 @@ div#items_list tr td.more_actions {
 div#items_list .sort_link {
   font-size: .7em;
 }
+
+/* line 1, ../../app/stylesheets/partials/_location_list.scss */
+ul#locations-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* line 5, ../../app/stylesheets/partials/_location_list.scss */
+ul#locations-list li {
+  padding-bottom: 20px;
+}
+/* line 8, ../../app/stylesheets/partials/_location_list.scss */
+ul#locations-list li span.name {
+  display: inline;
+  float: left;
+  margin-right: 6px;
+  width: 54px;
+}
+/* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html ul#locations-list li span.name {
+  overflow-x: hidden;
+}
+
+/* line 12, ../../app/stylesheets/partials/_location_list.scss */
+.handle:hover {
+  cursor: move;
+}

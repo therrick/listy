@@ -10,7 +10,9 @@ Listy::Application.routes.draw do
   end
 
   resources :stores do
-    resources :locations
+    resources :locations do
+      post :sort, on: :collection
+    end
     resources :items do
       get 'mark_purchased', :on => :member
       get 'undo_purchase', :on => :member

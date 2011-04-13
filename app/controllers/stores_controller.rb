@@ -13,7 +13,7 @@ class StoresController < ApplicationController
     @list_items = Item.search(params[:search])
       .joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
       .where("items.store_id = ? AND items.number_needed > 0", @store.id)
-      .order("locations.sort, items.name")
+      .order("locations.position, items.name")
 
     @other_items = Item.scoped
       

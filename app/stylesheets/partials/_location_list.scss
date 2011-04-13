@@ -1,0 +1,12 @@
+ul#locations-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    padding-bottom: 20px;
+  }
+  li span.name {
+    @include column(3);
+  }
+}
+.handle:hover{cursor: move;}

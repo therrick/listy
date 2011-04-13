@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>name</th>
-    <th>sort</th>
+    <th>position</th>
     <th>store</th>
     <th></th>
     <th></th>
@@ -13,7 +13,7 @@
 <% @locations.each do |location| %>
   <tr>
     <td><%= location.name %></td>
-    <td><%= location.sort %></td>
+    <td><%= location.position %></td>
     <td><%= location.store_id %></td>
     <td><%= link_to 'show', admin_location_path(location) %></td>
     <td><%= link_to 'edit', edit_admin_location_path(location) %></td>

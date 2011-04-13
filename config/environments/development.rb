@@ -25,7 +25,7 @@ Listy::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
   
   # development javascripts
-  config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+  config.action_view.javascript_expansions[:defaults] = %w(jquery jquery-ui.custom.min rails)
   
 end
 

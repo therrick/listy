@@ -13,6 +13,7 @@ gem 'devise'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'andand'
 gem 'formtastic', '~> 1.2.3'
+gem 'acts_as_list'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -28,6 +28,16 @@ class LocationsController < ApplicationController
         render :action => "new"
       end
     end
+    
+    def sort
+      @store = current_user.stores.find(params[:store_id])
+      locations = @store.locations
+      locations.each do |location|
+        location.position = params['location'].index(location.id.to_s) + 1
+        location.save
+      end
+      render :nothing => true
+    end
 
     def update
       @store = current_user.stores.find(params[:store_id])
