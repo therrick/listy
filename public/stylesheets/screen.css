@@ -593,7 +593,7 @@ ul#locations-list {
 }
 /* line 5, ../../app/stylesheets/partials/_location_list.scss */
 ul#locations-list li {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 /* line 8, ../../app/stylesheets/partials/_location_list.scss */
 ul#locations-list li span.name {

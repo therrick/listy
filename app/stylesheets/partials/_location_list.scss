@@ -3,7 +3,7 @@ ul#locations-list {
   padding: 0;
   list-style-type: none;
   li {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
   li span.name {
     @include column(3);
