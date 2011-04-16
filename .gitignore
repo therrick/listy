@@ -3,4 +3,5 @@
 db/*.sqlite3
 log/*.log
 config/database.yml
+config/deploy.rb
 tmp/
