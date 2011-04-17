@@ -1,5 +1,12 @@
 <h1>edit  <%= @store.name %></h1>
 
-<%= render 'form' %>
+<% semantic_form_for @store do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+  <% end %>
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>
 
 <%= link_to 'cancel', stores_path %>

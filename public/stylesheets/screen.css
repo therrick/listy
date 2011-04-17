@@ -395,13 +395,36 @@ body.one-col {
   font-size: 1em;
 }
 /* line 14, ../../app/stylesheets/partials/_one_col.scss */
+body.one-col h1 {
+  font-size: 2.5em;
+}
+/* line 16, ../../app/stylesheets/partials/_one_col.scss */
+body.one-col h1 ul.submenu {
+  font-size: .4em;
+  margin: 0 0 2em;
+  padding: 0;
+  padding-top: 5px;
+  display: inline;
+  float: right;
+}
+/* line 23, ../../app/stylesheets/partials/_one_col.scss */
+body.one-col h1 ul.submenu li {
+  list-style-type: disc;
+  float: left;
+  margin: 0 1em 0 1em;
+}
+/* line 28, ../../app/stylesheets/partials/_one_col.scss */
+body.one-col h1 ul.submenu li.first {
+  list-style-type: none;
+}
+/* line 33, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #container, body.one-col #header, body.one-col #content-wrapper, body.one-col #footer {
   width: 654px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 17, ../../app/stylesheets/partials/_one_col.scss */
+/* line 36, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header {
   display: inline;
   float: left;
@@ -415,27 +438,27 @@ body.one-col #header {
 * html body.one-col #header {
   overflow-x: hidden;
 }
-/* line 22, ../../app/stylesheets/partials/_one_col.scss */
+/* line 41, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header ul.umenu {
   margin: 0 0 2em;
   padding: 0;
 }
-/* line 25, ../../app/stylesheets/partials/_one_col.scss */
+/* line 44, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header ul.umenu li {
   list-style-type: disc;
   float: left;
   margin: 0 1em 0 1em;
 }
-/* line 30, ../../app/stylesheets/partials/_one_col.scss */
+/* line 49, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header ul.umenu li.first {
   list-style-type: none;
 }
-/* line 35, ../../app/stylesheets/partials/_one_col.scss */
+/* line 54, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #content-wrapper {
   /*    @include showgrid;*/
   background-color: #fff;
 }
-/* line 38, ../../app/stylesheets/partials/_one_col.scss */
+/* line 57, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #content-wrapper #actual-content {
   padding-left: 20px;
   display: inline;
@@ -535,52 +558,27 @@ body.bp #header-user a:active {
   border-bottom: 1px solid #777;
 }
 
-/* line 2, ../../app/stylesheets/partials/_item_list.scss */
-div#items_list form.formtastic fieldset > ol > li {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 0;
-}
-/* line 8, ../../app/stylesheets/partials/_item_list.scss */
-div#items_list form.formtastic#new_item fieldset > ol > li label {
-  display: none;
-}
-/* line 11, ../../app/stylesheets/partials/_item_list.scss */
-div#items_list form.formtastic#new_item fieldset > ol > li {
-  display: inline;
-}
-/* line 14, ../../app/stylesheets/partials/_item_list.scss */
-div#items_list form.formtastic#new_item fieldset.inputs {
-  width: 240px;
-  display: inline;
-  overflow: visible;
-  padding-bottom: 5px;
-}
-/* line 20, ../../app/stylesheets/partials/_item_list.scss */
-div#items_list form.formtastic#new_item fieldset.buttons {
-  padding: 0;
-}
-/* line 25, ../../app/stylesheets/partials/_item_list.scss */
+/* line 3, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.action {
   width: 20px;
 }
-/* line 28, ../../app/stylesheets/partials/_item_list.scss */
+/* line 6, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.name {
   width: 140px;
 }
-/* line 31, ../../app/stylesheets/partials/_item_list.scss */
+/* line 9, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.location {
   width: 40px;
 }
-/* line 34, ../../app/stylesheets/partials/_item_list.scss */
+/* line 12, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.notes {
   width: 140px;
 }
-/* line 37, ../../app/stylesheets/partials/_item_list.scss */
+/* line 15, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.more_actions {
   width: 40px;
 }
-/* line 41, ../../app/stylesheets/partials/_item_list.scss */
+/* line 19, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list .sort_link {
   font-size: .7em;
 }

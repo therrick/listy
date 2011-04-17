@@ -1,26 +1,4 @@
 div#items_list {
-  form.formtastic fieldset > ol > li {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 0;
-  }
-  form.formtastic#new_item {
-    fieldset > ol > li label {
-      display: none;
-    }
-    fieldset > ol > li {
-      display: inline;
-    }
-    fieldset.inputs {
-      width: 240px;
-      display: inline;
-      overflow: visible;
-      padding-bottom: 5px;
-    }
-    fieldset.buttons {
-      padding: 0;
-    }
-  }
   tr {
     td.action {
       width : 20px;

@@ -4,6 +4,7 @@ class StoresController < ApplicationController
   
   def index
     @stores = Store.find_all_by_user_id(current_user.id)
+    @store = Store.new # for 'new' form at top of page
   end
   
   def show
@@ -26,10 +27,6 @@ class StoresController < ApplicationController
     else
       @other_items = @other_items.order("items.name")
     end
-  end
-  
-  def new
-    @store = Store.new
   end
   
   def edit
@@ -62,5 +59,18 @@ class StoresController < ApplicationController
     @store.destroy
   
     redirect_to(stores_url)
+  end
+  
+  def mark_all_purchased
+    @store = current_user.stores.find(params[:id])
+
+    list_items = @store.items.where("number_needed > 0")
+    list_items.each do |item|
+      item.popularity += item.number_needed
+      item.number_needed = 0
+      item.save!
+    end
+    
+    redirect_to store_url(@store.id)
   end
 end

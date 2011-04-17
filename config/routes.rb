@@ -10,6 +10,7 @@ Listy::Application.routes.draw do
   end
 
   resources :stores do
+    get :mark_all_purchased, :on => :member
     resources :locations do
       post :sort, :on => :collection
       get :move_up, :on => :member

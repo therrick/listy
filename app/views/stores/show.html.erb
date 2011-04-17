@@ -2,11 +2,19 @@
   <%= javascript_include_tag 'list_go' %>
 <% end %>
 
-<h1><%= @store.name %></h1>
+<h1>
+  <%= @store.name %>
+  <ul class="submenu">
+    <li class="first"><%= link_to 'edit aisles', store_locations_path(@store.id), :class => 'subtitle' %></li>
+    <li><%= link_to 'mark all purchased', mark_all_purchased_store_path(@store.id), :class => 'subtitle',
+              :confirm => 'are you sure you want to mark all items purchased?' %></li>
+  </ul>
+</h1>
+
 
 <div id="items_list">
-  <%= render "add_form" %>
-
+  <%= render "add_item_form" %>
+  <br/>
   <div id="items"><%= render "items" %></div>
 
 </div>
