@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+[
+  { :email => 'admin@test.com', :password => 'password1', :admin => true }
+].each do |attributes|
+  if !User.find_by_username(attributes[:email])
+    u = User.new
+    u.email    = attributes[:email]
+    u.password = attributes[:password]
+    u.admin = attributes[:admin]
+    u.save!
+  end
+end
+
+
