@@ -12,12 +12,13 @@ Listy::Application.routes.draw do
   resources :stores do
     resources :locations do
       post :sort, :on => :collection
+      get :move_up, :on => :member
     end
-    resources :items do
-      get 'mark_purchased', :on => :member
-      get 'undo_purchase', :on => :member
-      get 'add_needed', :on => :member
-      get 'subtract_needed', :on => :member
+    resources :items do # TODO: these should be posts
+      get :mark_purchased, :on => :member
+      get :undo_purchase, :on => :member
+      get :add_needed, :on => :member
+      get :subtract_needed, :on => :member
     end
   end
   

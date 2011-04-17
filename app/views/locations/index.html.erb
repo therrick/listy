@@ -6,9 +6,14 @@
       <span class="name">
         <%= location.name -%>
       </span>
-      <span class="handle">[handle]<span>
-      <span class="edit"><%= link_to 'edit', edit_store_location_path(@store.id, location) %></span>
-      <span class="delete"><%= link_to 'delete', store_location_path(@store.id, location), :confirm => 'are you sure?', :method => :delete %></span>
+      <span class="handle"><%= image_tag("updown.png", :border=>0) %><span>
+      <span class="up"><%= link_to image_tag("up.png", :border=>0),
+                              move_up_store_location_path(@store.id, location) %></span>
+      <span class="edit"><%= link_to image_tag("edit.png", :border=>0),
+                                edit_store_location_path(@store.id, location) %></span>
+      <span class="delete"><%= link_to image_tag("delete.png", :border=>0), 
+                                  store_location_path(@store.id, location),       
+                                  :confirm => 'are you sure?', :method => :delete %></span>
     </li>
   <% end %>
 </ul>
@@ -22,26 +27,33 @@
 <%= content_for :javascript do %>
 
   <%= javascript_tag do %>
-     $('#locations-list').sortable(
-        {
-          axis: 'y', 
-          dropOnEmpty:false, 
-          handle: '.handle', 
-          cursor: 'crosshair',
-          items: 'li',
-          opacity: 0.4,
-          scroll: true,
-          update: function(){
-            $.ajax({
-                type: 'post', 
-                data: $('#locations-list').sortable('serialize'), 
-                dataType: 'script', 
-                complete: function(request){
-                    $('#locations-list').effect('highlight');
-                  },
-                url: '/stores/<%=@store.id%>/locations/sort'})
-            }
-          })
-    <% end %>
+  
+    if (isIOS()) {
+      $('.handle').hide();
+    } else {
+      $('.up').hide();
+    }
+    
+    $('#locations-list').sortable(
+      {
+        axis: 'y', 
+        dropOnEmpty:false, 
+        handle: '.handle', 
+        cursor: 'crosshair',
+        items: 'li',
+        opacity: 0.4,
+        scroll: true,
+        update: function(){
+          $.ajax({
+              type: 'post', 
+              data: $('#locations-list').sortable('serialize'), 
+              dataType: 'script', 
+              complete: function(request){
+                  $('#locations-list').effect('highlight');
+                },
+              url: '/stores/<%=@store.id%>/locations/sort'})
+          }
+        })
+  <% end %>
   
 <% end %>

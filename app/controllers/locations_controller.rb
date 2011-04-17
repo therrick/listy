@@ -29,6 +29,24 @@ class LocationsController < ApplicationController
       end
     end
     
+    def move_up
+      @store = current_user.stores.find(params[:store_id])
+      locations = @store.locations
+      @location = locations.find(params[:id])
+      original_position = @location.position
+      if original_position > 1
+        @location.position -= 1
+        @location.save
+        locations.each do |location|
+          location.position += 1 if location != @location &&
+            location.position >= @location.position &&
+            location.position <= original_position
+          location.save
+        end
+      end
+      redirect_to(store_locations_url(@store_id))
+    end
+    
     def sort
       @store = current_user.stores.find(params[:store_id])
       locations = @store.locations
