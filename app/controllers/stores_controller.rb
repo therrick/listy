@@ -10,16 +10,16 @@ class StoresController < ApplicationController
     @store = current_user.stores.find(params[:id])
     @item = Item.new() # for 'new' form at top of page
     
-    @list_items = Item.search(params[:search])
-      .joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
-      .where("items.store_id = ? AND items.number_needed > 0", @store.id)
-      .order("locations.position, items.name")
+    @list_items = Item.scoped
+    @list_items = @list_items.search(params[:search])
+    @list_items = @list_items.joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
+    @list_items = @list_items.where("items.store_id = ? AND items.number_needed > 0", @store.id)
+    @list_items = @list_items.order("locations.position, items.name")
 
     @other_items = Item.scoped
-      
     @other_items = @other_items.search(params[:search])
-      .joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
-      .where("items.store_id = ? AND items.number_needed = 0", @store.id)
+    @other_items = @other_items.joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
+    @other_items = @other_items.where("items.store_id = ? AND items.number_needed = 0", @store.id)
       
     if params[:sort] == "pop"
       @other_items = @other_items.order("items.popularity DESC")
