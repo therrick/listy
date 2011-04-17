@@ -11,7 +11,7 @@ Listy::Application.routes.draw do
 
   resources :stores do
     resources :locations do
-      post :sort, on: :collection
+      post :sort, :on => :collection
     end
     resources :items do
       get 'mark_purchased', :on => :member
