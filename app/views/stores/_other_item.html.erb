@@ -1,6 +1,7 @@
 <tr class="item_list not_needed">
   <td class="action">
-    <%= link_to image_tag("add_list.png", :border=>0), add_needed_store_item_path(@store.id, other_item.id) %>
+    <%= link_to image_tag("add_list.png", :border=>0), add_needed_store_item_path(@store.id, other_item.id),
+          :method => :post %>
   </td>
   <td><%= other_item.name %></td>
   <td><%= other_item.location.andand.name %></td>

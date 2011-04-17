@@ -7,7 +7,7 @@
   <ul class="submenu">
     <li class="first"><%= link_to 'edit aisles', store_locations_path(@store.id), :class => 'subtitle' %></li>
     <li><%= link_to 'mark all purchased', mark_all_purchased_store_path(@store.id), :class => 'subtitle',
-              :confirm => 'are you sure you want to mark all items purchased?' %></li>
+              :confirm => 'are you sure you want to mark all items purchased?', :method => :post %></li>
   </ul>
 </h1>
 
