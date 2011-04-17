@@ -7,7 +7,9 @@
 <% semantic_form_for [@store, @item] do |f| %>
   <%= f.inputs do %>
     <%= f.input :name, :input_html => { :autocomplete => "off" } %>
-    <%= f.input :location %>
+    <% if @store.locations.length > 0 %>
+      <%= f.input :location, :collection => @store.locations %>
+    <% end %>
     <%= hidden_field_tag :sort, params[:sort] %>  
   <% end %>
   <%= f.buttons do %>
