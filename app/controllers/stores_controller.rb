@@ -3,7 +3,7 @@ class StoresController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @stores = Store.find_all_by_user_id(current_user.id)
+    @stores = Store.where("user_id = ? and hidden = false", current_user.id).order("name")
     @store = Store.new # for 'new' form at top of page
   end
   
@@ -56,7 +56,9 @@ class StoresController < ApplicationController
   
   def destroy
     @store = current_user.stores.find(params[:id])
-    @store.destroy
+    # hide instead of @store.destroy
+    @store.hidden = true
+    @store.save
   
     redirect_to(stores_url)
   end

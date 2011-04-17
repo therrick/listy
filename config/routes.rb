@@ -15,7 +15,7 @@ Listy::Application.routes.draw do
       post :sort, :on => :collection
       post :move_up, :on => :member
     end
-    resources :items do # TODO: these should be posts
+    resources :items do
       post :mark_purchased, :on => :member
       post :undo_purchase, :on => :member
       post :add_needed, :on => :member
