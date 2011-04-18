@@ -34,7 +34,7 @@ $(function () {
   // add item form doubles as an ajax search form.  
 	if ( $('#items_search').length ) {
 	  $('input#item_name').keyup(function () {  
-			filter_items('.item_list',$('input#item_name').val())
+			window.setTimeout("filter_items('.item_list',$('input#item_name').val());", 1);
 		  return false;  
 	  });  
   };  
