@@ -23,8 +23,14 @@ form.formtastic#new_item {
   fieldset > ol > li label {
     display: none;
   }
+  fieldset.inputs {
+    width: 400px;
+    display: inline;
+    padding-bottom: 5px;
+  }
   fieldset > ol > li {
     display: inline;
+    overflow: hidden;
   }
   fieldset.buttons {
     padding: 0;
@@ -36,11 +42,11 @@ form.formtastic#new_store {
   }
   fieldset > ol > li {
     display: inline;
+    overflow: hidden;
   }
   fieldset.inputs {
-    width: 240px;
+    width: 400px;
     display: inline;
-    overflow: visible;
     padding-bottom: 5px;
   }
   fieldset.buttons {
@@ -48,10 +54,12 @@ form.formtastic#new_store {
   }
 }
 form.formtastic#new_aisle {
+  fieldset > ol > li {
+    overflow: hidden;
+  }
   fieldset.inputs {
-    width: 240px;
+    width: 400px;
     display: inline;
-    overflow: visible;
     padding-bottom: 5px;
   }
   fieldset.buttons {

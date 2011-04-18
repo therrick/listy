@@ -9,10 +9,10 @@ ul#aisles-list {
     @include column(3);
   }
   li span.description {
-    @include column(14);
+    @include column(18);
   }
   li span.other_actions {
-    @include column(4, true);
+    @include column(5, true);
   }
 }
 .handle:hover{cursor: move;}
