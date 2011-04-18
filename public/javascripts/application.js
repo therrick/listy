@@ -34,13 +34,22 @@ $(function () {
   // add item form doubles as an ajax search form.  
 	if ( $('#items_search').length ) {
 	  $('input#item_name').keyup(function () {  
-	  	$('#items_search input#search').val($('input#item_name').val())
-		  $.get($('#items_search').attr('action'), 
-		    $('#items_search').serialize(), null, 'script');  
+			filter_items('.item_list',$('input#item_name').val())
 		  return false;  
 	  });  
   };  
 });
+
+function filter_items(selector, query) {  
+  query =   $.trim(query); //trim white space  
+  query = query.replace(/ /gi, '|'); //add OR for regex query  
+  
+  $(selector).each(function() {  
+    ($(this).find("td:nth-child(2)").text().search(new RegExp(query, "i")) < 0) ? $(this).hide().removeClass('visible') : $(this).show().addClass('visible');  
+  });  
+}
+
+
 
 // sort with ajax and keep other forms updated with appropriate sort params
 $(function () {  
