@@ -4,7 +4,7 @@ module StoresHelper
     if params[:position] == "pop"
       link = link_to "sort by name", :sort => "", :search => params[:search]
     else
-      link = link_to "sort by popularity", :sort => "pop", :search => params[:search]
+      link = link_to "sort by pop.", :sort => "pop", :search => params[:search]
     end
     ("<span class=\"sort_link\">(" + link + ")</span>").html_safe
   end
