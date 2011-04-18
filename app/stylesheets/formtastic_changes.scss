@@ -35,6 +35,9 @@ form.formtastic#new_item {
   fieldset.buttons {
     padding: 0;
   }
+  select#item_aisle_id {
+    font-size: .5em;
+  }
 }
 form.formtastic#new_store {
   fieldset > ol > li label {

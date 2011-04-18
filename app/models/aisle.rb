@@ -17,8 +17,8 @@ class Aisle < ActiveRecord::Base
   
   def truncated_description
     return nil if !description
-    if (description.length > 20)
-      description[0..17] + "..."
+    if (description.length > 25)
+      description[0..22] + "..."
     else
       description
     end
