@@ -42,15 +42,15 @@ namespace :app do
       {:name => "2", :store_id => store1.id, :position => 3 },
       {:name => "3", :store_id => store1.id, :position => 4 },
     ].each do |attributes|
-      Location.find_or_create_by_name_and_store_id(attributes)
+      Aisle.find_or_create_by_name_and_store_id(attributes)
     end
 
-    loc1 = Location.find_by_name_and_store_id("1A", store1.id)
-    loc2 = Location.find_by_name_and_store_id("1B", store1.id)
+    loc1 = Aisle.find_by_name_and_store_id("1A", store1.id)
+    loc2 = Aisle.find_by_name_and_store_id("1B", store1.id)
     [
-      {:name => "milk", :store_id => store1.id, :location_id => loc1.id },
-      {:name => "eggs", :store_id => store1.id, :number_needed => 1, :location_id => loc1.id },
-      {:name => "bread", :store_id => store1.id, :number_needed => 2, :location_id => loc2.id },
+      {:name => "milk", :store_id => store1.id, :aisle_id => loc1.id },
+      {:name => "eggs", :store_id => store1.id, :number_needed => 1, :aisle_id => loc1.id },
+      {:name => "bread", :store_id => store1.id, :number_needed => 2, :aisle_id => loc2.id },
       {:name => "cereal", :store_id => store1.id },
     ].each do |attributes|
       Item.find_or_create_by_name_and_store_id(attributes)

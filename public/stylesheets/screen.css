@@ -567,7 +567,7 @@ div#items_list tr td.name {
   width: 140px;
 }
 /* line 9, ../../app/stylesheets/partials/_item_list.scss */
-div#items_list tr td.location {
+div#items_list tr td.aisle {
   width: 40px;
 }
 /* line 12, ../../app/stylesheets/partials/_item_list.scss */
@@ -583,29 +583,51 @@ div#items_list .sort_link {
   font-size: .7em;
 }
 
-/* line 1, ../../app/stylesheets/partials/_location_list.scss */
-ul#locations-list {
+/* line 1, ../../app/stylesheets/partials/_aisle_list.scss */
+ul#aisles-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 5, ../../app/stylesheets/partials/_location_list.scss */
-ul#locations-list li {
+/* line 5, ../../app/stylesheets/partials/_aisle_list.scss */
+ul#aisles-list li {
   padding-bottom: 10px;
 }
-/* line 8, ../../app/stylesheets/partials/_location_list.scss */
-ul#locations-list li span.name {
+/* line 8, ../../app/stylesheets/partials/_aisle_list.scss */
+ul#aisles-list li span.name {
   display: inline;
   float: left;
   margin-right: 6px;
   width: 54px;
 }
 /* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html ul#locations-list li span.name {
+* html ul#aisles-list li span.name {
+  overflow-x: hidden;
+}
+/* line 11, ../../app/stylesheets/partials/_aisle_list.scss */
+ul#aisles-list li span.description {
+  display: inline;
+  float: left;
+  margin-right: 6px;
+  width: 274px;
+}
+/* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html ul#aisles-list li span.description {
+  overflow-x: hidden;
+}
+/* line 14, ../../app/stylesheets/partials/_aisle_list.scss */
+ul#aisles-list li span.other_actions {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 74px;
+}
+/* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html ul#aisles-list li span.other_actions {
   overflow-x: hidden;
 }
 
-/* line 12, ../../app/stylesheets/partials/_location_list.scss */
+/* line 18, ../../app/stylesheets/partials/_aisle_list.scss */
 .handle:hover {
   cursor: move;
 }

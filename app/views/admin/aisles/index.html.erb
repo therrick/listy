@@ -1,0 +1,29 @@
+<h1>listing aisles</h1>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>description</th>
+    <th>position</th>
+    <th>store</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @aisle.each do |aisle| %>
+  <tr>
+    <td><%= aisle.name %></td>
+    <td><%= aisle.description %></td>
+    <td><%= aisle.position %></td>
+    <td><%= aisle.store_id %></td>
+    <td><%= link_to 'show', admin_aisle_path(aisle) %></td>
+    <td><%= link_to 'edit', edit_admin_aisle_path(aisle) %></td>
+    <td><%= link_to 'destroy', admin_aisle_path(aisle), :confirm => 'are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'new aisle', new_admin_aisle_path %>

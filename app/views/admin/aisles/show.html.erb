@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>name:</b>
+  <%= @aisle.name %>
+</p>
+
+<p>
+  <b>description:</b>
+  <%= @aisle.description %>
+</p>
+
+<p>
+  <b>position:</b>
+  <%= @aisle.position %>
+</p>
+
+<p>
+  <b>store:</b>
+  <%= @aisle.store_id %>
+</p>
+
+
+<%= link_to 'edit', edit_admin_aisle_path(@aisle) %> |
+<%= link_to 'back', admin_aisles_path %>

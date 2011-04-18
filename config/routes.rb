@@ -4,14 +4,14 @@ Listy::Application.routes.draw do
 
   namespace :admin do
     resources :users
-    resources :locations
+    resources :aisles
     resources :items
     resources :stores
   end
 
   resources :stores do
     post :mark_all_purchased, :on => :member
-    resources :locations do
+    resources :aisles do
       post :sort, :on => :collection
       post :move_up, :on => :member
     end

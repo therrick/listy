@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  belongs_to :location
+  belongs_to :aisle
   validates :name, :presence => true
   validates_uniqueness_of :name, :scope => [:store_id]
   

@@ -1,0 +1,67 @@
+<h1><%= @store.name %> aisles
+  <ul class="submenu">
+    <li class="first"><%= link_to "back to #{@store.name}", store_path(@store.id), :class => 'subtitle' %></li>
+  </ul>
+</h1>
+
+<%= render "add_aisle_form" %>
+<br/>
+<ul id="aisles-list">
+  <% @aisles.each do |aisle| %>
+    <li id="aisle_<%= aisle.id -%>">
+      <span class="name">
+        <%= aisle.name -%>
+      </span>
+      <span class="description">
+        <%= aisle.description -%>&nbsp;
+      </span>
+      <span class="other_actions">
+        <span class="handle"><%= image_tag("updown.png", :border=>0) %></span>
+        <span class="up"><%= link_to image_tag("up.png", :border=>0),
+                                move_up_store_aisle_path(@store.id, aisle) %></span>
+        <span class="edit"><%= link_to image_tag("edit.png", :border=>0),
+                                  edit_store_aisle_path(@store.id, aisle) %></span>
+        <span class="delete"><%= link_to image_tag("delete.png", :border=>0), 
+                                    store_aisle_path(@store.id, aisle),       
+                                    :confirm => 'are you sure?', :method => :delete %></span>
+      </span>
+      <div style="clear:both"></div>
+    </li>
+  <% end %>
+</ul>
+
+<br />
+
+<%= content_for :javascript do %>
+
+  <%= javascript_tag do %>
+  
+    if (isIOS()) {
+      $('.handle').hide();
+    } else {
+      $('.up').hide();
+    }
+    
+    $('#aisles-list').sortable(
+      {
+        axis: 'y', 
+        dropOnEmpty:false, 
+        handle: '.handle', 
+        cursor: 'crosshair',
+        items: 'li',
+        opacity: 0.4,
+        scroll: true,
+        update: function(){
+          $.ajax({
+              type: 'post', 
+              data: $('#aisles-list').sortable('serialize'), 
+              dataType: 'script', 
+              complete: function(request){
+                  $('#aisles-list').effect('highlight');
+                },
+              url: '/stores/<%=@store.id%>/aisles/sort'})
+          }
+        })
+  <% end %>
+  
+<% end %>

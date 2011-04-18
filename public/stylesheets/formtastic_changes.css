@@ -33,33 +33,38 @@ form.formtastic#new_item fieldset > ol > li {
   display: inline;
 }
 /* line 29, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_item fieldset.inputs {
-  width: 240px;
-  display: inline;
-  overflow: visible;
-  padding-bottom: 5px;
-}
-/* line 35, ../../app/stylesheets/formtastic_changes.scss */
 form.formtastic#new_item fieldset.buttons {
   padding: 0;
 }
 
-/* line 40, ../../app/stylesheets/formtastic_changes.scss */
+/* line 34, ../../app/stylesheets/formtastic_changes.scss */
 form.formtastic#new_store fieldset > ol > li label {
   display: none;
 }
-/* line 43, ../../app/stylesheets/formtastic_changes.scss */
+/* line 37, ../../app/stylesheets/formtastic_changes.scss */
 form.formtastic#new_store fieldset > ol > li {
   display: inline;
 }
-/* line 46, ../../app/stylesheets/formtastic_changes.scss */
+/* line 40, ../../app/stylesheets/formtastic_changes.scss */
 form.formtastic#new_store fieldset.inputs {
   width: 240px;
   display: inline;
   overflow: visible;
   padding-bottom: 5px;
 }
-/* line 52, ../../app/stylesheets/formtastic_changes.scss */
+/* line 46, ../../app/stylesheets/formtastic_changes.scss */
 form.formtastic#new_store fieldset.buttons {
+  padding: 0;
+}
+
+/* line 51, ../../app/stylesheets/formtastic_changes.scss */
+form.formtastic#new_aisle fieldset.inputs {
+  width: 240px;
+  display: inline;
+  overflow: visible;
+  padding-bottom: 5px;
+}
+/* line 57, ../../app/stylesheets/formtastic_changes.scss */
+form.formtastic#new_aisle fieldset.buttons {
   padding: 0;
 }

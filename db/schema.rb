@@ -10,23 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110417203711) do
+ActiveRecord::Schema.define(:version => 20110417211218) do
+
+  create_table "aisles", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.integer  "store_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "description"
+  end
 
   create_table "items", :force => true do |t|
     t.string   "name"
     t.integer  "store_id"
     t.integer  "number_needed", :default => 0
-    t.integer  "location_id"
+    t.integer  "aisle_id"
     t.string   "notes"
     t.integer  "popularity",    :default => 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "locations", :force => true do |t|
-    t.string   "name"
-    t.integer  "position"
-    t.integer  "store_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

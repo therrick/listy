@@ -13,13 +13,13 @@ class StoresController < ApplicationController
     
     @list_items = Item.scoped
     @list_items = @list_items.search(params[:search])
-    @list_items = @list_items.joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
+    @list_items = @list_items.joins("LEFT OUTER JOIN aisles on items.aisle_id=aisles.id")
     @list_items = @list_items.where("items.store_id = ? AND items.number_needed > 0", @store.id)
-    @list_items = @list_items.order("locations.position, items.name")
+    @list_items = @list_items.order("aisles.position, items.name")
 
     @other_items = Item.scoped
     @other_items = @other_items.search(params[:search])
-    @other_items = @other_items.joins("LEFT OUTER JOIN locations on items.location_id=locations.id")
+    @other_items = @other_items.joins("LEFT OUTER JOIN aisles on items.aisle_id=aisles.id")
     @other_items = @other_items.where("items.store_id = ? AND items.number_needed = 0", @store.id)
       
     if params[:sort] == "pop"
