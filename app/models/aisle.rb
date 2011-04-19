@@ -1,5 +1,6 @@
 class Aisle < ActiveRecord::Base
   belongs_to :store
+  has_many :items, :dependent => :nullify
   
   validates_length_of :name, :maximum=>8
   validates_length_of :description, :maximum=>50

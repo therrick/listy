@@ -18,7 +18,7 @@
       <span class="other_actions">
         <span class="handle"><%= image_tag("updown.png", :border=>0) %></span>
         <span class="up"><%= link_to image_tag("up.png", :border=>0),
-                                move_up_store_aisle_path(@store.id, aisle) %></span>
+                                move_up_store_aisle_path(@store.id, aisle), :method => :post %></span>
         <span class="edit"><%= link_to image_tag("edit.png", :border=>0),
                                   edit_store_aisle_path(@store.id, aisle) %></span>
         <span class="delete"><%= link_to image_tag("delete.png", :border=>0), 
