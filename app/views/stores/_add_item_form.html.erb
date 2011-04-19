@@ -4,7 +4,7 @@
     <%= hidden_field_tag :sort, params[:sort] %>  
 <% end %>
 
-<% semantic_form_for [@store, @item] do |f| %>
+<%= semantic_form_for [@store, @item] do |f| %>
   <%= f.inputs do %>
     <%= f.input :name, :input_html => { :autocomplete => "off" } %>
     <% if @store.aisles.length > 0 %>
