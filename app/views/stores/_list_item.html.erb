@@ -1,6 +1,6 @@
 <tr class="item_list needed">
   <td class="action">
-    <%= link_to image_tag("purchase.png", :border=>0), mark_purchased_store_item_path(@store.id, list_item.id),
+    <%= link_to image_tag("purchase.png", {:border=>0, :title=>"mark purchased"}), mark_purchased_store_item_path(@store.id, list_item.id),
         :method => :post %>
   </td>
   <td class="name">
@@ -10,10 +10,12 @@
   <td class="aisle"><%= list_item.aisle.try(:name) %></td>
   <td class="notes"><%= list_item.notes_trimmed %></td>
   <td class="more_actions">
-    <%= link_to image_tag("add.png", :border=>0), add_needed_store_item_path(@store.id, list_item.id), 
+    <%= link_to image_tag("add.png", {:border=>0, :title=>"add one more needed"}), 
+          add_needed_store_item_path(@store.id, list_item.id), 
           :method => :post %>
-    <%= link_to image_tag("subtract.png", :border=>0), subtract_needed_store_item_path(@store.id, list_item.id), 
+    <%= link_to image_tag("subtract.png", {:border=>0, :title=>"subtract from number needed"}),
+          subtract_needed_store_item_path(@store.id, list_item.id), 
           :method => :post %>
-    <%= link_to image_tag("edit.png", :border=>0), edit_store_item_path(@store.id, list_item.id) %>
+    <%= link_to image_tag("edit.png", {:border=>0, :title=>"edit item"}), edit_store_item_path(@store.id, list_item.id) %>
   </td>
 </tr>

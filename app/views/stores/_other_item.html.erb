@@ -1,14 +1,16 @@
 <tr class="item_list not_needed">
   <td class="action">
-    <%= link_to image_tag("add_list.png", :border=>0), add_needed_store_item_path(@store.id, other_item.id),
+    <%= link_to image_tag("add_list.png", {:border=>0, :title=>"add to list"}), add_needed_store_item_path(@store.id, other_item.id),
           :method => :post %>
   </td>
   <td class="name"><%= other_item.name %></td>
   <td class="aisle"><%= other_item.aisle.try(:name) %></td>
   <td class="notes"><%= other_item.notes_trimmed %></td>
   <td class="more_actions">
-    <%= link_to image_tag("edit.png", :border=>0), edit_store_item_path(@store.id, other_item.id) %>
-    <%= link_to image_tag("delete.png", :border=>0), store_item_path(@store.id, other_item.id),
+    <%= link_to image_tag("edit.png", {:border=>0, :title=>"edit item"}), 
+          edit_store_item_path(@store.id, other_item.id) %>
+    <%= link_to image_tag("delete.png", {:border=>0, :title=>"delete item"}),
+          store_item_path(@store.id, other_item.id),
           :confirm => "Are you sure?", :method => :delete %>  
   </td>
 </tr>
