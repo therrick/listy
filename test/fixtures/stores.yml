@@ -2,8 +2,8 @@
 
 one:
   name: store1
-  user_id: one
+  user: one
 
 two:
   name: store2
-  user_id: one
+  user: one

@@ -1,6 +1,6 @@
 <h1>edit  <%= @store.name %></h1>
 
-<% semantic_form_for @store do |f| %>
+<%= semantic_form_for @store do |f| %>
   <%= f.inputs do %>
     <%= f.input :name %>
   <% end %>

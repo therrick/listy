@@ -2,10 +2,6 @@ class ItemsController < ApplicationController
 
   before_filter :authenticate_user!
 
-  def new
-    @item = Item.new
-  end
-
   def edit
     @store = current_user.stores.find(params[:store_id])
     @item = @store.items.find(params[:id])

@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
+  name: aisle1
   position: 1
-  store_id: 1
+  store: one
 
 two:
-  name: MyString
+  name: aisle2
   position: 2
-  store_id: 1
+  store: one

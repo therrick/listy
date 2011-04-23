@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class StoresControllerTest < ActionController::TestCase
+  include Devise::TestHelpers  
+
   setup do
     @store = stores(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do
@@ -11,17 +15,12 @@ class StoresControllerTest < ActionController::TestCase
     assert_not_nil assigns(:stores)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should create store" do
     assert_difference('Store.count') do
       post :create, :store => @store.attributes
     end
 
-    assert_redirected_to store_path(assigns(:store))
+    assert_redirected_to stores_path
   end
 
   test "should show store" do
@@ -36,13 +35,12 @@ class StoresControllerTest < ActionController::TestCase
 
   test "should update store" do
     put :update, :id => @store.to_param, :store => @store.attributes
-    assert_redirected_to store_path(assigns(:store))
+    assert_redirected_to stores_path
   end
 
   test "should destroy store" do
-    assert_difference('Store.count', -1) do
-      delete :destroy, :id => @store.to_param
-    end
+    delete :destroy, :id => @store.to_param
+    assert Store.find(@store.id).hidden
 
     assert_redirected_to stores_path
   end

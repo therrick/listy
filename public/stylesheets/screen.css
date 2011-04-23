@@ -559,29 +559,33 @@ body.bp #header-user a:active {
   border-bottom: 1px solid #777;
 }
 
-/* line 3, ../../app/stylesheets/partials/_item_list.scss */
+/* line 2, ../../app/stylesheets/partials/_item_list.scss */
+div#items_list th {
+  border-top: 1px solid #777;
+}
+/* line 4, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.action {
   width: 20px;
 }
-/* line 6, ../../app/stylesheets/partials/_item_list.scss */
+/* line 7, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.name {
   width: 140px;
 }
-/* line 9, ../../app/stylesheets/partials/_item_list.scss */
+/* line 10, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.aisle {
   width: 40px;
   font-size: .8em;
 }
-/* line 13, ../../app/stylesheets/partials/_item_list.scss */
+/* line 14, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.notes {
   width: 140px;
   font-size: .8em;
 }
-/* line 17, ../../app/stylesheets/partials/_item_list.scss */
+/* line 18, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list tr td.more_actions {
   width: 40px;
 }
-/* line 21, ../../app/stylesheets/partials/_item_list.scss */
+/* line 22, ../../app/stylesheets/partials/_item_list.scss */
 div#items_list .sort_link {
   font-size: .7em;
 }

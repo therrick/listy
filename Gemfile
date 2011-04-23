@@ -11,7 +11,6 @@ gem "compass", ">= 0.10.6"
 gem 'haml'
 gem 'devise'
 gem 'jquery-rails', '>= 0.2.6'
-gem 'andand'
 gem 'formtastic', '~> 1.2.3'
 gem 'acts_as_list'
 
