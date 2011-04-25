@@ -9,6 +9,12 @@
 //    +--------+-----+
 
 body.one-col {
+  .flash {
+    .subnotice {
+      display: block;
+      font-size: .6em;
+    }
+  }
   background-color: #ccc;
   font-size: 1.2em;
   h1 {

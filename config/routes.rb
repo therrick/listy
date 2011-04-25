@@ -17,7 +17,7 @@ Listy::Application.routes.draw do
     end
     resources :items do
       post :mark_purchased, :on => :member
-      post :undo_purchase, :on => :member
+      get :undo_purchase, :on => :member
       post :add_needed, :on => :member
       post :subtract_needed, :on => :member
     end

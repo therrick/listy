@@ -13,72 +13,18 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
 /* line 15, ../../app/stylesheets/formtastic_changes.scss */
+input {
+  font-size: 1em;
+}
+
+/* line 17, ../../app/stylesheets/formtastic_changes.scss */
 form.formtastic fieldset.inputs > ol > li input {
   width: 150px;
 }
 
-/* line 17, ../../app/stylesheets/formtastic_changes.scss */
+/* line 19, ../../app/stylesheets/formtastic_changes.scss */
 form.formtastic fieldset > ol > li {
   margin-top: 0px;
   margin-bottom: 0px;
-  padding: 0;
-}
-
-/* line 23, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_item fieldset > ol > li label {
-  display: none;
-}
-/* line 26, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_item fieldset.inputs {
-  width: 400px;
-  display: inline;
-  padding-bottom: 5px;
-}
-/* line 31, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_item fieldset > ol > li {
-  display: inline;
-  overflow: hidden;
-}
-/* line 35, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_item fieldset.buttons {
-  padding: 0;
-}
-/* line 38, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_item select#item_aisle_id {
-  font-size: .5em;
-}
-
-/* line 43, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_store fieldset > ol > li label {
-  display: none;
-}
-/* line 46, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_store fieldset > ol > li {
-  display: inline;
-  overflow: hidden;
-}
-/* line 50, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_store fieldset.inputs {
-  width: 400px;
-  display: inline;
-  padding-bottom: 5px;
-}
-/* line 55, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_store fieldset.buttons {
-  padding: 0;
-}
-
-/* line 60, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_aisle fieldset > ol > li {
-  overflow: hidden;
-}
-/* line 63, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_aisle fieldset.inputs {
-  width: 400px;
-  display: inline;
-  padding-bottom: 5px;
-}
-/* line 68, ../../app/stylesheets/formtastic_changes.scss */
-form.formtastic#new_aisle fieldset.buttons {
   padding: 0;
 }

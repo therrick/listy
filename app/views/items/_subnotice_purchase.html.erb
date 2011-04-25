@@ -1,0 +1,6 @@
+<% if @item.store.aisles.count > 0 && @item.aisle == nil %>
+<span class="subnotice">
+<%= link_to "why not assign an aisle to make it easier to find next time?",      
+      edit_store_item_path(@item.store.id, @item.id) %>
+</span>
+<% end %>

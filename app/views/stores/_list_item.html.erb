@@ -7,7 +7,7 @@
     <%= list_item.name %>
     <%= list_item.number_needed > 1 ? "(x#{list_item.number_needed})" : ""%>
   </td>
-  <td class="aisle"><%= list_item.aisle.try(:name) %></td>
+  <td class="aisle"><%= aisle_link(list_item) %></td>
   <td class="notes"><%= list_item.notes_trimmed %></td>
   <td class="more_actions">
     <%= link_to image_tag("add.png", {:border=>0, :title=>"add one more needed"}), 

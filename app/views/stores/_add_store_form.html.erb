@@ -1,8 +1,4 @@
-<%= semantic_form_for @store do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :name %>
-  <% end %>
-  <%= f.buttons do %>
-    <%= f.commit_button :label => 'add new store' %>
-  <% end %>
+<%= form_for @store do |f| %>
+  <%= f.text_field :name, :size => 15 %>
+  <%= submit_tag "add new store" %>
 <% end %>

@@ -4,15 +4,7 @@
     <%= hidden_field_tag :sort, params[:sort] %>  
 <% end %>
 
-<%= semantic_form_for [@store, @item] do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :name, :input_html => { :autocomplete => "off" } %>
-    <% if @store.aisles.length > 0 %>
-      <%= f.input :aisle, :collection => @store.aisles %>
-    <% end %>
-    <%= hidden_field_tag :sort, params[:sort] %>  
-  <% end %>
-  <%= f.buttons do %>
-    <%= f.commit_button :label => 'add new item' %>
-  <% end %>
+<%= form_for [@store, @item] do |f| %>
+  <%= f.text_field :name, :autocomplete => :off, :size => 15 %>
+  <%= submit_tag "add new item" %>
 <% end %>

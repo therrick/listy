@@ -394,11 +394,16 @@ body.one-col {
   background-color: #ccc;
   font-size: 1.2em;
 }
-/* line 14, ../../app/stylesheets/partials/_one_col.scss */
+/* line 13, ../../app/stylesheets/partials/_one_col.scss */
+body.one-col .flash .subnotice {
+  display: block;
+  font-size: .6em;
+}
+/* line 20, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col h1 {
   font-size: 2em;
 }
-/* line 16, ../../app/stylesheets/partials/_one_col.scss */
+/* line 22, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col h1 ul.submenu {
   font-size: .4em;
   margin: 0 0 2em;
@@ -407,24 +412,24 @@ body.one-col h1 ul.submenu {
   display: inline;
   float: right;
 }
-/* line 23, ../../app/stylesheets/partials/_one_col.scss */
+/* line 29, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col h1 ul.submenu li {
   list-style-type: disc;
   float: left;
   margin: 0 1em 0 1em;
 }
-/* line 28, ../../app/stylesheets/partials/_one_col.scss */
+/* line 34, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col h1 ul.submenu li.first {
   list-style-type: none;
 }
-/* line 33, ../../app/stylesheets/partials/_one_col.scss */
+/* line 39, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #container, body.one-col #header, body.one-col #content-wrapper, body.one-col #footer {
   width: 480px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 36, ../../app/stylesheets/partials/_one_col.scss */
+/* line 42, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header {
   display: inline;
   float: left;
@@ -438,28 +443,28 @@ body.one-col #header {
 * html body.one-col #header {
   overflow-x: hidden;
 }
-/* line 41, ../../app/stylesheets/partials/_one_col.scss */
+/* line 47, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header ul.umenu {
   font-size: .8em;
   margin: 0 0 2em;
   padding: 0;
 }
-/* line 45, ../../app/stylesheets/partials/_one_col.scss */
+/* line 51, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header ul.umenu li {
   list-style-type: disc;
   float: left;
   margin: 0 1em 0 1em;
 }
-/* line 50, ../../app/stylesheets/partials/_one_col.scss */
+/* line 56, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #header ul.umenu li.first {
   list-style-type: none;
 }
-/* line 55, ../../app/stylesheets/partials/_one_col.scss */
+/* line 61, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #content-wrapper {
   /*    @include showgrid;*/
   background-color: #fff;
 }
-/* line 58, ../../app/stylesheets/partials/_one_col.scss */
+/* line 64, ../../app/stylesheets/partials/_one_col.scss */
 body.one-col #content-wrapper #actual-content {
   padding-left: 14.727px;
   display: inline;

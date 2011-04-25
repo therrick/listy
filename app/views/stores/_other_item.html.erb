@@ -4,7 +4,7 @@
           :method => :post %>
   </td>
   <td class="name"><%= other_item.name %></td>
-  <td class="aisle"><%= other_item.aisle.try(:name) %></td>
+  <td class="aisle"><%= aisle_link(other_item) %></td>
   <td class="notes"><%= other_item.notes_trimmed %></td>
   <td class="more_actions">
     <%= link_to image_tag("edit.png", {:border=>0, :title=>"edit item"}), 

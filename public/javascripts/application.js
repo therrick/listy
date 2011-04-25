@@ -43,7 +43,12 @@ $(function () {
 function filter_items(selector, query) {  
   query =   $.trim(query); //trim white space  
   query = query.replace(/ /gi, '|'); //add OR for regex query  
-  
+  if (query.length > 0) {
+		$("#item_table_headings").hide();
+	} else {
+		$("#item_table_headings").show();
+	}
+	
   $(selector).each(function() {  
     ($(this).find("td:nth-child(2)").text().search(new RegExp(query, "i")) < 0) ? $(this).hide().removeClass('visible') : $(this).show().addClass('visible');  
   });  

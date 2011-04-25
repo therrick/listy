@@ -12,60 +12,12 @@ The following style may be *conditionally* included for improved support on olde
 form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
+input { font-size: 1em; }
+
 form.formtastic fieldset.inputs > ol > li input { width: 150px; }
 
 form.formtastic fieldset > ol > li {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0;
-}
-form.formtastic#new_item {
-  fieldset > ol > li label {
-    display: none;
-  }
-  fieldset.inputs {
-    width: 400px;
-    display: inline;
-    padding-bottom: 5px;
-  }
-  fieldset > ol > li {
-    display: inline;
-    overflow: hidden;
-  }
-  fieldset.buttons {
-    padding: 0;
-  }
-  select#item_aisle_id {
-    font-size: .5em;
-  }
-}
-form.formtastic#new_store {
-  fieldset > ol > li label {
-    display: none;
-  }
-  fieldset > ol > li {
-    display: inline;
-    overflow: hidden;
-  }
-  fieldset.inputs {
-    width: 400px;
-    display: inline;
-    padding-bottom: 5px;
-  }
-  fieldset.buttons {
-    padding: 0;
-  }
-}
-form.formtastic#new_aisle {
-  fieldset > ol > li {
-    overflow: hidden;
-  }
-  fieldset.inputs {
-    width: 400px;
-    display: inline;
-    padding-bottom: 5px;
-  }
-  fieldset.buttons {
-    padding: 0;
-  }
 }
