@@ -42,7 +42,7 @@ $(function () {
 
 function filter_items(selector, query) {  
   query =   $.trim(query); //trim white space  
-  query = query.replace(/ /gi, '|'); //add OR for regex query  
+  query = query.replace(/ /gi, '.*'); //allow space to match any characters  
   if (query.length > 0) {
 		$("#item_table_headings").hide();
 	} else {
