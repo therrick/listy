@@ -1,15 +1,16 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.1.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', '1.2.5'
 gem 'mysql2'
+gem 'pg'
 gem "compass", ">= 0.10.6"
 gem 'haml'
-gem 'devise'
+gem 'devise', '1.1.8'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'formtastic', '~> 1.2.3'
 gem 'acts_as_list'
