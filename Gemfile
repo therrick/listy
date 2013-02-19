@@ -5,8 +5,6 @@ gem 'rails', '3.1.10'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', '1.2.5'
-gem 'mysql2'
 gem 'pg'
 gem "compass", ">= 0.10.6"
 gem 'haml'
@@ -39,6 +37,8 @@ gem 'acts_as_list'
 # end
 
 group :development do
+	gem 'sqlite3-ruby', '1.2.5'
+	gem 'mysql2'
   gem 'hirb'
   gem 'capistrano'
   gem 'capistrano-ext'
