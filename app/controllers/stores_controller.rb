@@ -21,8 +21,14 @@ class StoresController < ApplicationController
     @other_items = @other_items.search(params[:search])
     @other_items = @other_items.joins("LEFT OUTER JOIN aisles on items.aisle_id=aisles.id")
     @other_items = @other_items.where("items.store_id = ? AND items.number_needed = 0", @store.id)
-      
+    
     if params[:sort] == "pop"
+      session[:sort] = "pop"
+    elsif params[:sort] == "name"
+      session[:sort] = "name"
+    end
+    
+    if session[:sort] == "pop"
       @other_items = @other_items.order("items.popularity DESC")
     else
       @other_items = @other_items.order("items.name")

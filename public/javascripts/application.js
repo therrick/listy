@@ -34,7 +34,9 @@ $(function () {
   // add item form doubles as an ajax search form.  
 	if ( $('#items_search').length ) {
 	  $('input#item_name').keyup(function () {  
-			window.setTimeout("filter_items('.item_list',$('input#item_name').val());", 1);
+	    delay(function(){
+				filter_items('.item_list',$('input#item_name').val());
+	    }, 500 );
 		  return false;  
 	  });  
   };  
@@ -49,12 +51,24 @@ function filter_items(selector, query) {
 		$("#item_table_headings").show();
 	}
 	
+	// var Timer = T();
+	// Timer.s("start");
+	
   $(selector).each(function() {  
-    ($(this).find("td:nth-child(2)").text().search(new RegExp(query, "i")) < 0) ? $(this).hide().removeClass('visible') : $(this).show().addClass('visible');  
+		($(this).find("td:nth-child(2)").text().search(new RegExp(query, "i")) < 0) ? $(this).css("display", "none") : $(this).css("display", "table-row");
+		// $(this).hide() : $(this).show();  
   });  
+
+	// alert(Timer.e());
 }
 
-
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
 
 // sort with ajax and keep other forms updated with appropriate sort params
 $(function () {  
@@ -80,4 +94,18 @@ function isIOS(){
         (navigator.platform.indexOf("iPad") != -1) ||
         (navigator.platform.indexOf("iPod") != -1)
     );
+}
+
+
+function T(){
+	var a=[];						//Holds the timer stack
+	return{
+		s:function(n){					//Starts a new timer, pass in 'n' as the name of the timer
+			a.unshift({n:n,t:new Date()})		//Puts the timer on top of the stack
+		},
+		e:function(l){					//Ends the most recently started timer
+			l=a.shift();				//Gets the timer from top of the stack
+			return((new Date()-l.t)+'ms|'+l.n)	//Returns elapsed milliseconds of named timer
+		}
+	}
 }
