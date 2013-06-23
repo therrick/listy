@@ -24,12 +24,12 @@ class AislesController < ApplicationController
       @aisle.store_id = @store.id
 
       if @aisle.save
-        redirect_to(store_aisles_url(@store_id), :notice => 'Aisle was successfully created.')
+        redirect_to(store_aisles_url(@store.id), :notice => 'Aisle was successfully created.')
       else
         render :action => "new"
       end
     end
-    
+
     def move_up
       # TODO: what a freakin mess.  there's gotta be a more efficient way to do this
       @store = current_user.stores.find(params[:store_id])
@@ -56,9 +56,9 @@ class AislesController < ApplicationController
           aisle.save!
         end
       end
-      redirect_to(store_aisles_url(@store_id))
+      redirect_to(store_aisles_url(@store.id))
     end
-    
+
     def sort
       @store = current_user.stores.find(params[:store_id])
       aisles = @store.aisles
@@ -75,7 +75,7 @@ class AislesController < ApplicationController
       @aisle = @store.aisles.find(params[:id])
 
       if @aisle.update_attributes(params[:aisle])
-        redirect_to(store_aisles_url(@store_id), :notice => 'Aisle was successfully updated.')
+        redirect_to(store_aisles_url(@store.id), :notice => 'Aisle was successfully updated.')
       else
         render :action => "edit"
       end
@@ -86,6 +86,6 @@ class AislesController < ApplicationController
       @aisle = @store.aisles.find(params[:id])
       @aisle.destroy
 
-      redirect_to(store_aisles_url(@store_id))
+      redirect_to(store_aisles_url(@store.id))
     end
   end
