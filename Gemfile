@@ -14,7 +14,7 @@ gem 'formtastic', '~> 1.2.3'
 gem 'acts_as_list'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
